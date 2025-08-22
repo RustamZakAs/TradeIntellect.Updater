@@ -6,13 +6,13 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TradeIntellect.Updater")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Application updater from zip file")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("TradeIntellect, by Rustam Zak As")]
 [assembly: AssemblyProduct("TradeIntellect.Updater")]
-[assembly: AssemblyCopyright("Copyright ©  2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyCopyright("Copyright © 2025 Rustam Zak As")]
+[assembly: AssemblyTrademark("TradeIntellect")]
+[assembly: AssemblyCulture("")] //az-Latn-AZ
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
