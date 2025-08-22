@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeIntellect.Updater", "TradeIntellect.Updater.csproj", "{572FDCBF-F636-4082-A8BD-34F6CA6EC833}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{572FDCBF-F636-4082-A8BD-34F6CA6EC833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572FDCBF-F636-4082-A8BD-34F6CA6EC833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572FDCBF-F636-4082-A8BD-34F6CA6EC833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572FDCBF-F636-4082-A8BD-34F6CA6EC833}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCE46817-39D8-4B0A-95D4-F3EA06B4F7C8}
+	EndGlobalSection
+EndGlobal
