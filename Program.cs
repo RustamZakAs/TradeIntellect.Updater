@@ -19,10 +19,27 @@ namespace TradeIntellect.Updater
             string exePath = string.Empty;
             if (args.Length > 2)
                 exePath = args[2];
+            string appName = string.Empty;
+            if (args.Length > 3)
+                appName = args[3];
 
             // ждём, пока основное приложение закроется
             if (zipFile.Length > 0 && appDir.Length > 0)
                 Thread.Sleep(3000);
+
+            if (!string.IsNullOrEmpty(appName) && string.IsNullOrWhiteSpace(appName))
+            {
+                // проверяем, что приложение закрыто
+                Process[] processes = Process.GetProcessesByName(appName);
+                if (processes.Length > 0)
+                {
+                    foreach (Process process in processes)
+                    {
+                        process.Kill();
+                        process.WaitForExit();
+                    }
+                }
+            }
 
             // распаковываем архив в папку приложения
             if (zipFile != null && zipFile.Length > 5)
