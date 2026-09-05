@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.IO.Compression;
 using System.Threading;
 
@@ -9,48 +10,53 @@ namespace TradeIntellect.Updater
     {
         static void Main(string[] args)
         {
-            if (args == null) return;
-            string zipFile = string.Empty;
-            if (args.Length > 0)
-                zipFile = args[0];
-            string appDir = string.Empty;
-            if (args.Length > 1)
-                appDir = args[1];
-            string exePath = string.Empty;
-            if (args.Length > 2)
-                exePath = args[2];
-            string appName = string.Empty;
-            if (args.Length > 3)
-                appName = args[3];
+            if (args == null)
+                return;
 
-            // ждём, пока основное приложение закроется
+            string zipFile = args.Length > 0 ? args[0] : string.Empty;
+            string appDir = args.Length > 1 ? args[1] : string.Empty;
+            string exePath = args.Length > 2 ? args[2] : string.Empty;
+
+            // ждём закрытия основного приложения
             if (zipFile.Length > 0 && appDir.Length > 0)
                 Thread.Sleep(3000);
-
-            if (!string.IsNullOrEmpty(appName) && string.IsNullOrWhiteSpace(appName))
-            {
-                // проверяем, что приложение закрыто
-                Process[] processes = Process.GetProcessesByName(appName);
-                if (processes.Length > 0)
-                {
-                    foreach (Process process in processes)
-                    {
-                        process.Kill();
-                        process.WaitForExit();
-                    }
-                }
-            }
 
             // распаковываем архив в папку приложения
             if (zipFile != null && zipFile.Length > 5)
                 if (appDir != null && appDir.Length > 5)
                     ZipFile.ExtractToDirectory(zipFile, appDir);
 
-            // запускаем новое приложение
-            if (exePath != null && exePath.Length > 5)
+            // запускаем обновлённое приложение
+            if (!string.IsNullOrEmpty(exePath))
                 Process.Start(exePath);
 
             Environment.Exit(0);
+
+            //if (args == null) return;
+            //string zipFile = string.Empty;
+            //if (args.Length > 0)
+            //    zipFile = args[0];
+            //string appDir = string.Empty;
+            //if (args.Length > 1)
+            //    appDir = args[1];
+            //string exePath = string.Empty;
+            //if (args.Length > 2)
+            //    exePath = args[2];
+
+            //// ждём, пока основное приложение закроется
+            //if (zipFile.Length > 0 && appDir.Length > 0)
+            //    Thread.Sleep(3000);
+
+            //// распаковываем архив в папку приложения
+            //if (zipFile != null && zipFile.Length > 5)
+            //    if (appDir != null && appDir.Length > 5)
+            //        ZipFile.ExtractToDirectory(zipFile, appDir);
+
+            //// запускаем новое приложение
+            //if (exePath != null && exePath.Length > 5)
+            //    Process.Start(exePath);
+
+            //Environment.Exit(0);
         }
     }
 }
