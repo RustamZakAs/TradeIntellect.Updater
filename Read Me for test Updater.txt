@@ -1,1 +1,1 @@
-cmd start TradeIntellect.Updater.exe "" "" "Notepad.exe"
+cmd start TradeIntellect.Updater.exe "" "" "TradeIntPOS.exe" ""
